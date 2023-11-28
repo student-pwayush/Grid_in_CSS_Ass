@@ -1,0 +1,42 @@
+Explain the use of grid-auto-row and grid-auto-column using code examples.
+
+In CSS Grid Layout, the grid-auto-row and grid-auto-column properties are used to control the sizing and placement of grid tracks (rows and columns) that are created automatically when you have more content than explicitly defined rows or columns. These properties allow you to specify the size and behavior of these implicit tracks. Let's explore their usage with code examples.
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 100px 100px;
+      grid-template-rows: 50px 50px;
+      grid-auto-rows: 50px; /* Sets a default height for implicitly created rows */
+      grid-auto-columns: 100px; /* Sets a default width for implicitly created columns */
+      grid-gap: 10px;
+    }
+
+    .grid-item {
+      background-color: lightblue;
+      border: 1px solid #333;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+  </div>
+</body>
+</html>
+In this code example, we have a grid container with two explicitly defined columns and two explicitly defined rows. The grid-auto-rows property is set to 50px, and the grid-auto-columns property is set to 100px.
+
+Here's what happens in this example:
+
+The first two items are placed in the explicitly defined rows and columns.
+When items 3, 4, 5, and 6 are added, they create new implicit rows with a height of 50px and are placed in the available columns.
+Item 7 is added, creating another implicit row with a height of 50px and placed in the available columns.
